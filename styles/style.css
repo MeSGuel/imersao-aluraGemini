@@ -3,6 +3,7 @@
 body {
   font-family: "Robot", sans-serif, "Arial", Helvetica, sans-serif;
   min-height: 100vh;
+  position: relative;
 }
 
 li {
@@ -16,9 +17,9 @@ h1 {
 .section-pokemon {
   display: flex;
   justify-content: center;
+  align-items: center;
   background-color: rgb(188, 252, 252);
   border-top: 3px solid black;
-  padding: 30px 0;
 }
 
 .list-pokemon {
@@ -29,20 +30,94 @@ h1 {
 
 .list-pokemon__item {
   text-align: center;
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 250px;
   padding: 10px;
 
+  /* O Display flex faz a div sprit e o parágrafo permanecerem na ul */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+}
+
+.sprite {
+  width: 100%;
+
+  /* Esse heigh abaixo fazia todos os parágrafos estarem na mesma posição */
+  /* height: 100%; */
+  
   border: 2px solid black;
+  border-radius: 12px;
+  padding: 20px;
   cursor: pointer;
 }
 
-.list-pokemon__item img {
-  width: 80%;
+.sprite img {
+  width: 65%;
 }
 
-.list-pokemon__item p {
-  text-align: center;
-  font-size: 10px;
-  padding: 0 4px;
+.poke-name {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+
+/* Janela Widget */
+.widget {
+  transition: all 1s;
+  position: fixed;
+  top: 50%;
+  left: 150%;
+  transform: translate(-50%, -50%);
+
+  width: 650px;
+  height: 600px;
+  
+  border: 2px solid black;
+  background-color: aquamarine;
+}
+
+.widget--transition {
+  transition: all 1s;
+  left: 50%;
+}
+
+.widget__window {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+
+.widget__window button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.sprite-widget {
+  display: flex;
+  justify-content: center;
+  width: 30%;
+}
+
+.sprite-widget img {
+  width: 100%;
+}
+
+.none {
+  display: none;
 }
