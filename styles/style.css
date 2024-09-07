@@ -83,7 +83,7 @@ header a:active {
 }
 
 .container-input input {
-  width: 50%;
+  width: 450px;
   padding: 15px 20px;
   margin: 20px 0;
 
@@ -130,8 +130,8 @@ header a:active {
 
 .container-btns {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
+  gap: 10px;
   margin-bottom: 10px;
   margin-left: 25px;
 }
@@ -242,4 +242,21 @@ footer {
   justify-content: space-between;
   font-size: 1.5em;
   margin-top: 60px;
+}
+
+@media (max-width: 525px) {
+  .container-input input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 388px) {
+  .container-btns {
+    margin-left: 0;
+  }
+  
+  .container-btns select {
+    width: 190px;
+  }
+  
 }

@@ -152,7 +152,6 @@ function pokeTree(poke) {
       src="${poke.src}"
       alt="${poke.nome}"
       class="img"
-      data-sprite="${poke.backSrc}"
       />
     </div>
     <h3 class="poke-name">${poke.nome}</h3>
