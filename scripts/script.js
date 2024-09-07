@@ -1,4 +1,5 @@
 const widgetJanela = document.getElementById("widget");
+const containerInput = document.getElementById("containerInput");
 const lista = document.getElementById("lista");
 const input = document.getElementById("search");
 
@@ -69,15 +70,21 @@ function pokeBusca(pokemons) {
     console.log('Digite algo pelo menos... :|')
   }
 
+  let semEspaço = input.value.trim();
+  // Pega a primeira letra e transforma em maiúscula
+  // Depois junta com o resto em minúsculo.
+  semEspaço = semEspaço.charAt(0).toUpperCase() + semEspaço.slice(1).toLowerCase();
+
+  let foundPokemon = false;
   for (poke of pokemons) {
-    if (poke.nome.includes(input.value)) {
+    if (poke.nome.includes(semEspaço)) {
       pokeTree(poke);
-    } else {
-      if (poke.tipo.includes(input.value)) {
-        selectOptions.value = input.value;
-        pokeTree(poke);
-      }
+      foundPokemon = true;
     }
+  }
+
+  if(!foundPokemon) {
+    lista.innerHTML = "<h3 class='error'>Pokémon não encontrado!</h3>";
   }
 
   input.value = '';
