@@ -1,55 +1,86 @@
-const lista = document.getElementById("lista");
 const widgetJanela = document.getElementById("widget");
+const lista = document.getElementById("lista");
+const input = document.getElementById("search");
+const btn = document.getElementById("btn");
+const btnReload = document.getElementById("reload");
+const selectOptions = document.getElementById("select");
 
-console.log(pokemons[0].nome);
-renderPoke();
+input.value = '';
+selectOptions.value = "Todos";
 
-function renderPoke() {
-  // Para cada pokemon da lista "pokemons"
-  for (poke of pokemons) {
-    lista.innerHTML += `
-    <li class="list-pokemon__item">
-    <div class="sprite">
-    <img
-    src="${poke.src}"
-    alt="${poke.nome}"
-    id="poke"
-    class="img"
-    />
-    </div>
-    <p class="poke-name">${poke.nome}</p>
+// Para chamar os pokémons 2 segundos depois.
+let timeout;
+if (lista.innerHTML === "") {
+  lista.innerHTML = "<h3>Loading...</h3>";
+}
+timeout = setTimeout(() => {
+  pokeRender(pokemons);
+}, 2000);
 
-    <div class="desc none">
-      <p>${poke.descricao}</p>
-    </div>
-    
-    <div class="stats none">
-    <p class="hp">HP: ${poke.hp}</p>
-    <p class="attack">Attack: ${poke.ataque}</p>
-    <p class="defense">Defense: ${poke.defesa}</p>
-    <p class="speed">Speed: ${poke.velocidade}</p>
-    </div>
-    
-    <div class="type none">
-    <p class="type">Type: ${poke.tipo}</p>
-    </div>
-    </li>
-    `;
+// Para recarregar os pokémons
+btnReload.addEventListener('click', () => {
+  selectOptions.value = "Todos";
+  pokeRender(pokemons);
+});
+
+// Para pesquisar pokémons específicos
+btn.addEventListener('click', () => {
+  pokeBusca(pokemons)
+})
+
+// Filtra os pokémons em tipos
+selectOptions.addEventListener('change', () => {
+  pokeRender(pokemons);
+});
+
+function pokeRender(pokemons) {
+  // Tira o H3
+  lista.innerHTML = "";
+
+  let filteredPokemons;
+  if (selectOptions.value === "Todos") {
+    filteredPokemons = pokemons; // Mostra todos os pokémons
+  } else {
+    filteredPokemons = pokemons.filter(poke => poke.tipo.includes(selectOptions.value));
   }
 
-  const itemLista = document.querySelectorAll("#poke");
-  itemLista.forEach((item) => {
-    item.addEventListener("click", (e) => {
-      const pokemonSelecionado = e.target.parentNode.parentNode;
-      pokeWindow(pokemonSelecionado);
-    });
-  });
+  for (poke of filteredPokemons) {
+    pokeTree(poke);
+  }
+  
+  clearTimeout(timeout);
+  timeout = null;
+  pokeLista();
+}
+
+function pokeBusca(pokemons) {
+  // Esvazia a seção de pokémons
+  lista.innerHTML = "";
+
+  if(input.value === "") {
+    console.log('Digite algo pelo menos... :|')
+  }
+
+  for (poke of pokemons) {
+    if (poke.nome.includes(input.value)) {
+      pokeTree(poke);
+    } else {
+      if (poke.tipo.includes(input.value)) {
+        selectOptions.value = input.value;
+        pokeTree(poke);
+      }
+    }
+  }
+
+  input.value = '';
+  input.focus();
+  pokeLista();
 }
 
 function pokeWindow(pokemonSelecionado) {
   const img = pokemonSelecionado.querySelector(".img");
   const nome = pokemonSelecionado.querySelector(".poke-name").textContent;
-  const descricao = pokemonSelecionado.querySelector(".poke-name").textContent;
+  const descricao = pokemonSelecionado.querySelector(".desc").textContent;
 
   // Esta montanha de constantes selecionam os valores dos pokémons e extraiem
   // apenas o valor númerico sem espaços sobrando.
@@ -66,40 +97,75 @@ function pokeWindow(pokemonSelecionado) {
         <button id="btnClose">Fechar</button>
 
         <div class="sprite sprite-widget">
-          <img src="${img.src}" alt="" />
+          <img src="${img.src}" alt="${nome}" />
         </div>
 
         <p class="poke-name">${nome}</p>
 
         <div class="desc">
-          <p>${poke.descricao}</p>
+          <p>${descricao}</p>
         </div>
 
         <div class="stats">
           <p>HP: ${hp}</p>
-          <p>Attack: ${ataque}</p>
-          <p>Defense: ${defesa}</p>
-          <p>Speed: ${velocidade}</p>
+          <p>Ataque: ${ataque}</p>
+          <p>Defesa: ${defesa}</p>
+          <p>Velocidade: ${velocidade}</p>
         </div>
 
         <div class="type">
-          <p>Type: ${tipo}</p>
+          <p>Tipo: ${tipo}</p>
         </div>
       </div>
   `;
 
+  closeWindow();
+}
+
+
+function closeWindow() {
   const btnClose = document.getElementById("btnClose");
   btnClose.addEventListener("click", () => {
     widgetJanela.classList.remove("widget--transition");
   });
 }
 
-// itemLista.forEach((poke) => {
-//   poke.addEventListener("click", (e) => {
-//     let divFather = e.target.parentNode.parentNode;
-//     console.log(divFather)
-//     document.body.innerHTML += `
-//       <img src="">
-//     `
-//   });
-// });
+function pokeTree(poke) {
+  lista.innerHTML += `
+  <li class="list-pokemon__item">
+    <div class="sprite" id="poke">
+      <img
+      src="${poke.src}"
+      alt="${poke.nome}"
+      class="img"
+      />
+    </div>
+    <p class="poke-name">${poke.nome}</p>
+
+    <div class="desc none">
+      <p>${poke.descricao}</p>
+    </div>
+    
+    <div class="stats none">
+      <p class="hp">HP: ${poke.hp}</p>
+      <p class="attack">Ataque: ${poke.ataque}</p>
+      <p class="defense">Defesa: ${poke.defesa}</p>
+      <p class="speed">Velocidade: ${poke.velocidade}</p>
+    </div>
+    
+    <div class="type none">
+      <p class="type">Tipo: ${poke.tipo}</p>
+    </div>
+  </li>
+`;
+}
+
+function pokeLista() {
+  const itemLista = document.querySelectorAll("#poke");
+  itemLista.forEach((item) => {
+    item.addEventListener("click", (e) => {
+      const pokemonSelecionado = e.target.parentNode.parentNode;
+      pokeWindow(pokemonSelecionado);
+    });
+  });
+}

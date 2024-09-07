@@ -1,92 +1,276 @@
 const pokemons = [
   {
-    nome: 'Charmander',
-    src: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/4.gif',
-    tipo: 'Fire',
+    nome: "Charmander",
+    src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/4.gif",
+    tipo: "Fogo",
     hp: 45,
     ataque: 43,
     defesa: 50,
     velocidade: 50,
-    descricao: 'Um pokémon lagarto de fogo, conhecido por sua cauda flamejante.'
+    descricao:
+      "Um pokémon lagarto de fogo, conhecido por sua cauda flamejante.",
   },
   {
-    nome: 'Charmeleon',
-    src: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/5.gif',
-    tipo: 'Fire',
+    nome: "Charmeleon",
+    src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/5.gif",
+    tipo: "Fogo",
     hp: 58,
     ataque: 64,
     defesa: 58,
     velocidade: 80,
-    descricao: 'Um pokémon lagarto de fogo mais evoluído, com uma cauda mais longa e chamas mais intensas.'
+    descricao:
+      "Um pokémon lagarto de fogo mais evoluído, com uma cauda mais longa e chamas mais intensas.",
   },
   {
-    nome: 'Charizard',
-    src: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/6.gif',
-    tipo: 'Fire/Flying',
+    nome: "Charizard",
+    src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/6.gif",
+    tipo: "Fogo/Voador",
     hp: 78,
     ataque: 84,
     defesa: 78,
     velocidade: 100,
-    descricao: 'Um pokémon dragão de fogo, capaz de voar e respirar fogo.'
+    descricao: "Um pokémon dragão de fogo, capaz de voar e respirar fogo.",
   },
   {
-    nome: 'Squirtle',
-    src: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/7.gif',
-    tipo: 'Water',
+    nome: "Squirtle",
+    src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/7.gif",
+    tipo: "Água",
     hp: 44,
     ataque: 48,
     defesa: 65,
     velocidade: 43,
-    descricao: 'Um pokémon tartaruga aquático, conhecido por sua habilidade de esguichar água.'
+    descricao:
+      "Um pokémon tartaruga aquático, conhecido por sua habilidade de esguichar água.",
   },
   {
-    nome: 'Wartortle',
-    src: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/8.gif',
-    tipo: 'Water',
+    nome: "Wartortle",
+    src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/8.gif",
+    tipo: "Água",
     hp: 59,
     ataque: 63,
     defesa: 80,
     velocidade: 58,
-    descricao: 'Um pokémon tartaruga aquático mais evoluído, com uma carapaça mais resistente.'
+    descricao:
+      "Um pokémon tartaruga aquático mais evoluído, com uma carapaça mais resistente.",
   },
   {
-    nome: 'Blastoise',
-    src: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/9.gif',
-    tipo: 'Water',
+    nome: "Blastoise",
+    src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/9.gif",
+    tipo: "Água",
     hp: 79,
     ataque: 83,
     defesa: 100,
     velocidade: 78,
-    descricao: 'Um pokémon tartaruga aquático gigante, capaz de esguichar água a longas distâncias.'
+    descricao:
+      "Um pokémon tartaruga aquático gigante, capaz de esguichar água a longas distâncias.",
   },
   {
-    nome: 'Caterpie',
-    src: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10.gif',
-    tipo: 'Bug',
+    nome: "Caterpie",
+    src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10.gif",
+    tipo: "Inseto",
     hp: 45,
     ataque: 30,
     defesa: 35,
     velocidade: 45,
-    descricao: 'Um pokémon lagarta pequeno e rápido, conhecido por sua habilidade de se esconder em folhas.'
+    descricao:
+      "Um pokémon lagarta pequeno e rápido, conhecido por sua habilidade de se esconder em folhas.",
   },
   {
-    nome: 'Metapod',
-    src: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/11.gif',
-    tipo: 'Bug',
+    nome: "Metapod",
+    src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/11.gif",
+    tipo: "Inseto",
     hp: 50,
     ataque: 20,
     defesa: 55,
     velocidade: 30,
-    descricao: 'Um pokémon lagarta mais evoluído, com uma carapaça mais resistente e uma habilidade de se esconder em folhas.'
+    descricao:
+      "Um pokémon lagarta mais evoluído, com uma carapaça mais resistente e uma habilidade de se esconder em folhas.",
   },
   {
-    nome: 'Butterfree',
-    src: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/12.gif',
-    tipo: 'Bug/Flying',
+    nome: "Butterfree",
+    src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/12.gif",
+    tipo: "Inseto/Voador",
     hp: 60,
     ataque: 40,
     defesa: 40,
     velocidade: 70,
-    descricao: 'Um pokémon borboleta colorida, capaz de voar e se esconder em flores.'
-  }
+    descricao:
+      "Um pokémon borboleta colorida, capaz de voar e se esconder em flores.",
+  },
+  {
+    nome: "Weedle",
+    src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/13.gif",
+    tipo: "Inseto/Venenoso",
+    hp: 40,
+    ataque: 40,
+    defesa: 40,
+    velocidade: 45,
+    descricao:
+      "Um pokémon lagarta venenosa, conhecido por sua habilidade de se esconder em plantas.",
+  },
+  {
+    nome: "Kakuna",
+    src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/14.gif",
+    tipo: "Inseto/Venenoso",
+    hp: 45,
+    ataque: 25,
+    defesa: 50,
+    velocidade: 35,
+    descricao:
+      "Um pokémon lagarta mais evoluído, com uma carapaça mais resistente e uma habilidade de se esconder em plantas.",
+  },
+  {
+    nome: "Beedrill",
+    src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/15.gif",
+    tipo: "Inseto/Venenoso",
+    hp: 65,
+    ataque: 80,
+    defesa: 40,
+    velocidade: 75,
+    descricao:
+      "Um pokémon abelha venenosa, capaz de voar e atacar com seu ferrão.",
+  },
+  {
+    nome: "Pidgey",
+    src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/16.gif",
+    tipo: "Normal/Voador",
+    hp: 45,
+    ataque: 40,
+    defesa: 40,
+    velocidade: 56,
+    descricao:
+      "Um pokémon pássaro comum, conhecido por sua habilidade de voar e se esconder em árvores.",
+  },
+  {
+    nome: "Pidgeotto",
+    src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/17.gif",
+    tipo: "Normal/Voador",
+    hp: 63,
+    ataque: 60,
+    defesa: 60,
+    velocidade: 71,
+    descricao:
+      "Um pokémon pássaro mais evoluído, com uma plumagem mais brilhante e uma habilidade de voar mais rápida.",
+  },
+  {
+    nome: "Pidgeot",
+    src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/18.gif",
+    tipo: "Normal/Voador",
+    hp: 83,
+    ataque: 80,
+    defesa: 80,
+    velocidade: 91,
+    descricao:
+      "Um pokémon pássaro gigante, capaz de voar a grandes alturas e se esconder em árvores.",
+  },
+  {
+    nome: "Rattata",
+    src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/19.gif",
+    tipo: "Normal",
+    hp: 45,
+    ataque: 56,
+    defesa: 35,
+    velocidade: 72,
+    descricao:
+      "Um pokémon rato comum, conhecido por sua habilidade de se esconder em buracos.",
+  },
+  {
+    nome: "Raticate",
+    src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/20.gif",
+    tipo: "Normal",
+    hp: 60,
+    ataque: 65,
+    defesa: 40,
+    velocidade: 90,
+    descricao:
+      "Um pokémon rato mais evoluído, com uma força maior e uma habilidade de se esconder em buracos.",
+  },
+  {
+    nome: "Spearow",
+    src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/21.gif",
+    tipo: "Normal/Voador",
+    hp: 45,
+    ataque: 60,
+    defesa: 30,
+    velocidade: 70,
+    descricao:
+      "Um pokémon pássaro rápido, conhecido por sua habilidade de voar e se esconder em árvores.",
+  },
+  {
+    nome: "Fearow",
+    src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/22.gif",
+    tipo: "Normal/Voador",
+    hp: 65,
+    ataque: 90,
+    defesa: 65,
+    velocidade: 100,
+    descricao:
+      "Um pokémon pássaro gigante, capaz de voar a grandes alturas e se esconder em árvores.",
+  },
+  {
+    nome: "Ekans",
+    src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/23.gif",
+    tipo: "Venenoso",
+    hp: 35,
+    ataque: 60,
+    defesa: 44,
+    velocidade: 55,
+    descricao:
+      "Um pokémon cobra venenosa, conhecido por sua habilidade de se esconder em buracos.",
+  },
+  {
+    nome: "Arbok",
+    src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/24.gif",
+    tipo: "Venenoso",
+    hp: 60,
+    ataque: 85,
+    defesa: 69,
+    velocidade: 80,
+    descricao:
+      "Um pokémon cobra mais evoluído, com uma força maior e uma habilidade de se esconder em buracos.",
+  },
+  {
+    nome: "Pikachu",
+    src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/25.gif",
+    tipo: "Elétrico",
+    hp: 35,
+    ataque: 55,
+    defesa: 30,
+    velocidade: 90,
+    descricao:
+      "Um pokémon rato elétrico, conhecido por sua habilidade de armazenar eletricidade.",
+  },
+  {
+    nome: "Raichu",
+    src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/26.gif",
+    tipo: "Elétrico",
+    hp: 60,
+    ataque: 90,
+    defesa: 55,
+    velocidade: 110,
+    descricao:
+      "Um pokémon rato elétrico mais evoluído, com uma força maior e uma habilidade de armazenar mais eletricidade.",
+  },
+  {
+    nome: "Sandshrew",
+    src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/27.gif",
+    tipo: "Terrestre",
+    hp: 50,
+    ataque: 75,
+    defesa: 85,
+    velocidade: 40,
+    descricao:
+      "Um pokémon rato de areia, conhecido por sua habilidade de se esconder em buracos.",
+  },
+  {
+    nome: "Sandslash",
+    src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/28.gif",
+    tipo: "Terrestre",
+    hp: 75,
+    ataque: 100,
+    defesa: 110,
+    velocidade: 65,
+    descricao:
+    "Um pokémon rato de areia mais evoluído, com uma força maior e uma habilidade de se esconder em buracos profundos, protegendo-se de ataques inimigos."
+  },
 ];
