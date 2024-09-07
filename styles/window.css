@@ -130,7 +130,7 @@
 
 @media (max-width: 962px) {
   .widget {
-    top: -590px;
+    top: -610px;
     right: 50%;
     transform: translateX(50%);
   }
