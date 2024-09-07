@@ -1,17 +1,20 @@
 const widgetJanela = document.getElementById("widget");
 const lista = document.getElementById("lista");
 const input = document.getElementById("search");
+
 const btn = document.getElementById("btn");
 const btnReload = document.getElementById("reload");
 const selectOptions = document.getElementById("select");
+let containsClasse = btnReload.classList.contains('giro');
 
 input.value = '';
+input.focus();
 selectOptions.value = "Todos";
 
 // Para chamar os pokémons 2 segundos depois.
 let timeout;
 if (lista.innerHTML === "") {
-  lista.innerHTML = "<h3>Loading...</h3>";
+  lista.innerHTML = "<h3 class='play'>Loading...</h3>";
 }
 timeout = setTimeout(() => {
   pokeRender(pokemons);
@@ -25,7 +28,12 @@ btnReload.addEventListener('click', () => {
 
 // Para pesquisar pokémons específicos
 btn.addEventListener('click', () => {
-  pokeBusca(pokemons)
+  pokeBusca(pokemons);
+})
+input.addEventListener('keyup', (e) => {
+  if(e.key === 'Enter') {
+    pokeBusca(pokemons);
+  }
 })
 
 // Filtra os pokémons em tipos
@@ -94,29 +102,35 @@ function pokeWindow(pokemonSelecionado) {
   widgetJanela.classList.add("widget--transition");
   widgetJanela.innerHTML = `
       <div class="widget__window">
-        <button id="btnClose">Fechar</button>
+        <div class="first-part">
+          <div class="sprite sprite-widget">
+            <img src="${img.src}" alt="${nome}" />
+          </div>
 
-        <div class="sprite sprite-widget">
-          <img src="${img.src}" alt="${nome}" />
+          <div class="nome-type">
+            <h3 class="poke-name">${nome}</h3>
+          
+            <div class="type">
+              <p>Tipo: ${tipo}</p>
+            </div>
+          </div>
         </div>
-
-        <p class="poke-name">${nome}</p>
 
         <div class="desc">
           <p>${descricao}</p>
         </div>
 
-        <div class="stats">
-          <p>HP: ${hp}</p>
-          <p>Ataque: ${ataque}</p>
-          <p>Defesa: ${defesa}</p>
-          <p>Velocidade: ${velocidade}</p>
+        <div class="second-part">
+          <div class="stats stats-widget">
+            <p class="hp attr"><span class='key'>HP:</span> <span class='word'>${hp}</span></p>
+            <p class="attack attr"><span class='key'>Ataque:</span> <span class='word'>${ataque}</span></p>
+            <p class="defense attr"><span class='key'>Defesa:</span> <span class='word'>${defesa}</span></p>
+            <p class="speed attr"><span class='key'>Velocidade:</span> <span class='word'>${velocidade}</span></p>
+          </div>
         </div>
-
-        <div class="type">
-          <p>Tipo: ${tipo}</p>
-        </div>
+        <button id="btnClose">Fechar</button>
       </div>
+
   `;
 
   closeWindow();
@@ -138,9 +152,10 @@ function pokeTree(poke) {
       src="${poke.src}"
       alt="${poke.nome}"
       class="img"
+      data-sprite="${poke.backSrc}"
       />
     </div>
-    <p class="poke-name">${poke.nome}</p>
+    <h3 class="poke-name">${poke.nome}</h3>
 
     <div class="desc none">
       <p>${poke.descricao}</p>

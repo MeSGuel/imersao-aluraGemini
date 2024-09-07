@@ -14,6 +14,7 @@
     <!-- Metadados de Estilos -->
     <link rel="stylesheet" href="styles/reset.css" />
     <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/window.css">
 
     <!-- Metadados de Scripts -->
     <script
@@ -25,35 +26,49 @@
   </head>
 
   <body>
-    <h1>PokéDex</h1>
 
-    <div class="input">
+    <header>
+      <h1><span class="poke">Poké</span>Dex</h1>
+      <a href="https://github.com/MeSGuel/imersao-aluraGemini" target="_blank ">
+        <i class="fa-brands fa-github"></i>
+      </a>
+    </header>
+    
+    <div class="container-input">
       <label for="pokemon-num">Pesquise por Nome ou Tipo: </label>
       <input type="text" name="pokemon-num" id="search">
       <button id="btn">Pesquisar</button>
     </div>
 
-    <button class="btn-reload" id="reload">Recarregar</button>
-
-    <select id="select">
-      <option value="Todos">Todos</option>
-      <option disabled>--------------------------- ||</option>
-      <option value="Fogo">Tipo Fogo</option>
-      <option value="Fogo/Voador">Tipo Fogo/Voador</option>
-      <option disabled>--------------------------- ||</option>
-      <option value="Água">Tipo Água</option>
-      <option value="Terrestre">Tipo Terrestre</option>
-      <option value="Elétrico">Tipo Elétrico</option>
-      <option value="Venenoso">Tipo Venenoso</option>
-      <option disabled>--------------------------- ||</option>
-      <option value="Inseto">Tipo Inseto</option>
-      <option value="Inseto/Voador">Tipo Inseto/Voador</option>
-      <option value="Inseto/Venenoso">Tipo Inseto/Venenoso</option>
-      <option disabled>--------------------------- ||</option>
-      <option value="Normal">Tipo Normal</option>
-      <option value="Normal/Voador">Tipo Normal/Voador</option>
-      
-    </select>
+    <div class="container-btns">
+      <button class="btn-reload" id="reload"><i class="fa-solid fa-rotate-right"></i></button>
+      <select id="select">
+        <option value="Todos">Todos</option>
+        <option disabled>--------------------------- ||</option>
+        <option value="Fogo">Tipo Fogo</option>
+        <option value="Fogo/Voador">Tipo Fogo/Voador</option>
+        <option disabled>--------------------------- ||</option>
+        <option value="Água">Tipo Água</option>
+        <option value="Elétrico">Tipo Elétrico</option>
+        <option value="Venenoso">Tipo Venenoso</option>
+        <option disabled>--------------------------- ||</option>
+        <option value="Terrestre">Tipo Terrestre</option>
+        <option value="Venenoso/Terrestre">Tipo Venenoso/Terrestre</option>
+        <option disabled>--------------------------- ||</option>
+        <option value="Fada">Tipo Fada</option>
+        <option disabled>--------------------------- ||</option>
+        <option value="Inseto">Tipo Inseto</option>
+        <option value="Inseto/Voador">Tipo Inseto/Voador</option>
+        <option value="Inseto/Venenoso">Tipo Inseto/Venenoso</option>
+        <option value="Inseto/Planta">Tipo Inseto/Planta</option>
+        <option disabled>--------------------------- ||</option>
+        <option value="Venenoso/Voador">Tipo Venenoso/Voador</option>
+        <option value="Planta/Venenoso">Tipo Planta/Venenoso</option>
+        <option disabled>--------------------------- ||</option>
+        <option value="Normal">Tipo Normal</option>
+        <option value="Normal/Fada">Tipo Normal/Fada</option>
+      </select>
+    </div>
 
     <section class="section-pokemon">
       <ul class="list-pokemon" id="lista"></ul>
@@ -61,6 +76,13 @@
 
     <div class="widget" id="widget">
     </div>
+
+    <footer>
+      <p>Feito por Miguel Santos</p>
+      <a href="https://github.com/MeSGuel/imersao-aluraGemini" target="_blank ">
+        <i class="fa-brands fa-github"></i>
+      </a>
+    </footer>
 
     <!-- Scripts Locais -->
     <script src="scripts/script.js" defer></script>

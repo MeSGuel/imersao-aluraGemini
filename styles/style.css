@@ -1,41 +1,206 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
 
 body {
   font-family: "Robot", sans-serif, "Arial", Helvetica, sans-serif;
   min-height: 100vh;
   padding: 20px;
+  background-color: rgb(243, 237, 237);
   position: relative;
 }
 
-li {
-  list-style-type: none;
+p, h1, h2, h3 {
+  margin: 0;
 }
 
-h1 {
+.play {
+  font-family: "Play", sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #0704049c;
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  border-bottom: 3px solid black;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+header h1 {
+  font-size: 3em;
+  letter-spacing: 3px;
+  color: rgb(236, 66, 66);
+  text-shadow: 2px 4px 1px rgba(80, 38, 38, 0.63);
+  font-family: "Play", sans-serif;
+}
+
+h1 .poke {
+  color: #ffffff;
+  text-shadow: 3px 4px 1px rgba(0, 0, 0, 0.425);
+}
+
+header a {
+  font-size: 3em;
+  color: rgb(231, 88, 88);
+  text-shadow: 2px 3px 1px rgba(0, 0, 0, 0.308);
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+header a:hover {
+  font-size: 3.02em;
+  color: rgba(0, 0, 0, 0.452);
+}
+
+header a:active {
+  font-size: 2.96em;
+  color: rgb(0, 0, 0);
+}
+
+/* Inputs & Btns Styles */
+.container-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+}
+
+.container-input label {
   text-align: center;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #0704049c;
+  text-decoration: 2px underline rgba(0, 0, 0, 0.219);
+}
+
+.container-input input {
+  width: 50%;
+  padding: 15px 20px;
+  margin: 20px 0;
+
+  text-align: center;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: rgba(7, 4, 4, 0.582);
+
+  border-radius: 15px;
+  border: 2px dashed rgba(255, 0, 0, 0.178);
+}
+
+.container-input input:focus {
+  outline: 3px dashed rgba(255, 0, 0, 0.342);
+  border: 0;
+}
+
+.container-input button {
+  font-family: "Play", sans-serif;
+  font-size: 1.5em;
+  letter-spacing: 4px;
+  font-weight: 700;
+  border: 0;
+  padding: 10px 20px;
+  text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.308);
+  background-color: rgb(248, 213, 213);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+.container-input button:hover {
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  background-color: rgb(229, 173, 173);
+}
+
+.container-input button:active {
+  font-size: 1.4em;
+  letter-spacing: 2px;
+  background-color: rgba(165, 110, 110, 0.5);
+  box-shadow: 2px 3px 1px rgba(202, 196, 196, 0.5);
+}
+
+.container-btns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  margin-left: 25px;
 }
 
 .btn-reload {
-  margin: 20px 0;
+  font-size: 3em;
+  box-shadow: 2px 3px 1px rgba(216, 141, 141, 0.301);
+  background-color: transparent;
+  border-radius: 5px;
+  border: 0;
+  color: rgba(233, 80, 80, 0.952);
+  cursor: pointer;
 }
 
-.input {
-  text-align: center;
+.btn-reload:hover {
+  background-color: rgba(255, 113, 113, 0.178);
 }
 
+.btn-reload:active {
+  background-color: rgba(245, 165, 165, 0.671);
+  color: rgba(233, 80, 80, 0.658);
+  font-size: 47px;
+}
+
+.container-btns select {
+  padding: 0 20px;
+  width: 240px;
+  font-family: "Play", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: rgba(7, 4, 4, 0.582);
+
+  background-color: white;
+  border-radius: 15px;
+  border: 2px dashed rgba(255, 0, 0, 0.178);
+  cursor: pointer;
+}
+
+.container-btns select:hover {
+  background-color: rgba(255, 255, 255, 0.315);
+  border: 2px dashed rgba(255, 0, 0, 0.719);
+}
+
+.container-btns select option {
+  color: #241f3a9c;
+}
+
+/* Section Pokemon Styles */
 .section-pokemon {
   display: flex;
   justify-content: center;
   align-items: center;
 
-  background-color: rgb(188, 252, 252);
-  border: 3px solid black;
+  background-color: rgba(184, 47, 67, 0.541);
+  box-shadow: 4px 4px 1px 0 rgb(0, 0, 0);
+
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-radius: 31px; 
 }
 
 .list-pokemon {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  padding: 10px 2%;
+  margin: 0;
 }
 
 .list-pokemon__item {
@@ -43,18 +208,21 @@ h1 {
   padding: 10px;
 }
 
+/* SPRITES */
 .sprite {
   width: 200px;
-  border: 2px solid black;
-  border-radius: 12px;
   padding: 20px;
+  border: 2px solid black;
+  background-color: aliceblue;
+  border-radius: 12px;
 
   box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.452);
   cursor: pointer;
 }
 
 .sprite img {
-  width: 65%;
+  width: 55%;
+  margin: 0 auto;
 }
 
 .poke-name {
@@ -63,70 +231,15 @@ h1 {
   letter-spacing: 2px;
 }
 
-.desc {
-  text-align: center;
-}
-
-/* Janela Widget */
-.widget {
-  z-index: 99;
-  transition: all 1s;
-  position: fixed;
-  top: 50%;
-  left: 150%;
-  transform: translate(-50%, -50%);
-
-  width: 60%;
-  height: 90%;
-  
-  border: 2px solid black;
-  background-color: aquamarine;
-  box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.925);
-}
-
-.widget--transition {
-  transition: all 1s;
-  left: 50%;
-}
-
-.widget__window {
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-
-  width: 100%;
-  height: 100%;
-  padding: 10px;
-}
-
-.widget__window button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-}
-
-.sprite-widget {
-  display: flex;
-  justify-content: center;
-  min-width: 20%;
-  cursor: default;
-}
-
-.sprite-widget img {
-  width: 80%;
-}
-
-.stats {
-  text-align: center;
-}
-
 .none {
   display: none;
+}
+
+
+/* Footer Styles */
+footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5em;
+  margin-top: 60px;
 }

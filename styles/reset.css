@@ -11,6 +11,10 @@ body {
   margin: 0;
 }
 
+li {
+  list-style-type: none;
+}
+
 /**
    * Render the `main` element consistently in IE.
    */
