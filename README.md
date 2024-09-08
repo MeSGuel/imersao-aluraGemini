@@ -7,7 +7,7 @@ Além disso há uma premiação para aqueles que forem os <strong>10 melhores!</
 De forma breve, o projeto consisti em realizar pesquisas utilizando uma Data Base que os próprios alunos fizeram na imersão.
 
 <h2>Descrição - PokéDex</h2>
-Sim, PokéDex. Decidi criar um banco de dados pokémon onde terá informações diversas sobre os pokémons disponíveis. 
+Sim, PokéDex. Decidi criar um banco de dados pokémon onde terá informações diversas sobre os 55 pokémons disponíveis. 
 Informações como: Nome, Tipo, Status e uma breve descrição feita pelo Gemini.
 
 <h3>Funcionalidades</h3>
@@ -25,6 +25,17 @@ Informações como: Nome, Tipo, Status e uma breve descrição feita pelo Gemini
     <strong>Filtro:</strong> Um seletor com todas as opções de tipos de pokémons disponíveis.
    </li>
  </ul>
+<br>
+ <h3>Acessível a telas Mobiles!! 📱</h3>
+ <strong>
+  Design completamente adaptativo a celulares e tablets!
+  <br>
+  <ul>
+   <li>
+   Design Responsivo 100%! ✅
+  </li>
+  </ul>
+ </strong>
 
 <h3>Acesso ao Projeto</h3>
 Pelo Vercel: https://imersao-alura-gemini-nine.vercel.app
