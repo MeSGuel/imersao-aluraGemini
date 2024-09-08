@@ -7,7 +7,7 @@ Além disso há uma premiação para aqueles que forem os <strong>10 melhores!</
 De forma breve, o projeto consisti em realizar pesquisas utilizando uma Data Base que os próprios alunos fizeram na imersão.
 
 <h2>Descrição - PokéDex</h2>
-Sim, PokéDex. Decidi criar um banco de dados pokémon onde terá informações diversas sobre os pokémons disponíveis. 
+Sim, PokéDex. Decidi criar um banco de dados pokémon onde terá informações diversas sobre os 55 pokémons disponíveis. 
 Informações como: Nome, Tipo, Status e uma breve descrição feita pelo Gemini.
 
 <h3>Funcionalidades</h3>
