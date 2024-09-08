@@ -17,7 +17,7 @@ Informações como: Nome, Tipo, Status e uma breve descrição feita pelo Gemini
      Só não exagere. 😐
    </li>
    <li>
-    <strong>:window: Janela de Detalhes:</strong> Ao clicar em um pokémon é exibido uma janela onde mostrará informações mais detalhadas sobre... Também tem uma breve descrição feito pelo Gemini. 🤖 
+    <strong>:window: Janela de Detalhes:</strong> Ao clicar em um pokémon é exibido uma janela onde mostrará informações mais detalhadas sobre ele! Também tem uma breve descrição feito pelo Gemini. 🤖 
    </li>
    <li>
     <strong>🔄 Botão Recarregar:</strong> Um botão que recarrega os pokémons. Basicamente exibi todos.
