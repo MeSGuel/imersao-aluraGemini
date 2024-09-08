@@ -80,6 +80,11 @@ function pokeBusca(pokemons) {
     if (poke.nome.includes(semEspaço)) {
       pokeTree(poke);
       foundPokemon = true;
+    } else {
+      if(poke.tipo.includes(semEspaço)) {
+        pokeTree(poke);
+        foundPokemon = true;
+      }
     }
   }
 
