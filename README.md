@@ -25,6 +25,17 @@ Informações como: Nome, Tipo, Status e uma breve descrição feita pelo Gemini
     <strong>Filtro:</strong> Um seletor com todas as opções de tipos de pokémons disponíveis.
    </li>
  </ul>
+<br>
+ <h3>Acessível a telas Mobiles!! 📱</h3>
+ <strong>
+  Design completamente adaptativo a celulares e tablets!
+  <br>
+  <ul>
+   <li>
+   Design Responsivo 100%! ✅
+  </li>
+  </ul>
+ </strong>
 
 <h3>Acesso ao Projeto</h3>
 Pelo Vercel: https://imersao-alura-gemini-nine.vercel.app
