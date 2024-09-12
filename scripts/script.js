@@ -24,21 +24,19 @@ timeout = setTimeout(() => {
 // Para recarregar os pokémons
 btnReload.addEventListener('click', () => {
   selectOptions.value = "Todos";
+  input.value = '';
   pokeRender(pokemons);
 });
 
-// Para pesquisar pokémons específicos
-btn.addEventListener('click', () => {
+// Para pesquisar pokémons específicos em tempo real.
+// Sem necessidade de usar o parâmetro de eventos.
+input.addEventListener('input', () => {
   pokeBusca(pokemons);
-})
-input.addEventListener('keyup', (e) => {
-  if(e.key === 'Enter') {
-    pokeBusca(pokemons);
-  }
 })
 
 // Filtra os pokémons em tipos
 selectOptions.addEventListener('change', () => {
+  input.value = '';
   pokeRender(pokemons);
 });
 
@@ -70,9 +68,9 @@ function pokeBusca(pokemons) {
     console.log('Digite algo pelo menos... :|')
   }
 
-  let semEspaço = input.value.trim();
   // Pega a primeira letra e transforma em maiúscula
   // Depois junta com o resto em minúsculo.
+  let semEspaço = input.value.trim();
   semEspaço = semEspaço.charAt(0).toUpperCase() + semEspaço.slice(1).toLowerCase();
 
   let foundPokemon = false;
@@ -92,7 +90,6 @@ function pokeBusca(pokemons) {
     lista.innerHTML = "<h3 class='error'>Pokémon não encontrado!</h3>";
   }
 
-  input.value = '';
   input.focus();
   pokeLista();
 }
