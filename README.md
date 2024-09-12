@@ -13,16 +13,21 @@ Informações como: Nome, Tipo, Status e uma breve descrição feita pelo Gemini
 <h3>Funcionalidades</h3>
  <ul>
    <li>
-     <strong>Pesquisa:</strong> Um input de pesquisa que permite ao usuário realizar buscas pokémon usando o nome dele, ou fazendo buscas usando seu tipo específico.
+     <strong>🔎 Pesquisa:</strong> Encontre seu pokémon por meio do seu nome ou tipo! Não se preocupe com a letra maiúscula no início, escreva errado mesmo, o que é que tem?
+     Só não exagere. 😐
    </li>
    <li>
-    <strong>Janela de Detalhes:</strong> Ao clicar em um pokémon é exibido uma janela onde mostrará informações mais detalhadas sobre... E uma breve descrição feito pelo Gemini.
+    <strong>:window: Janela de Detalhes:</strong> Ao clicar em um pokémon é exibido uma janela onde mostrará informações mais detalhadas sobre ele! Também tem uma breve descrição feito pelo Gemini. 🤖 
    </li>
    <li>
-    <strong>Reload:</strong> Um botão que recarrega os pokémons. Basicamente exibi todos.
+    <strong>🔄 Botão Recarregar:</strong> Um botão que recarrega os pokémons. Basicamente exibi todos.
    </li>
    <li>
-    <strong>Filtro:</strong> Um seletor com todas as opções de tipos de pokémons disponíveis.
+    <strong>💠 Filtro Pokémon:</strong> Utilize filtros para buscar os pokémons por tipo específico.
+   </li>
+     <li>
+    <strong>📲 Responsivo:</strong> Otimizado para dispositivos móveis e desktop.
+
    </li>
  </ul>
 <br>
